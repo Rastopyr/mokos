@@ -1,0 +1,28 @@
+{
+  "name": "mokos",
+  "version": "0.0.0",
+  "description": "Functional reactive server. Based on Bacon.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fun-stack/mokos.git"
+  },
+  "keywords": [
+    "server",
+    "frp",
+    "http-server",
+    "bacon",
+    "fun-stack",
+    "functional",
+    "reactive"
+  ],
+  "author": "Rastopyr <rastopyr@gmail.com> (http://rastopyr.github.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fun-stack/mokos/issues"
+  },
+  "homepage": "https://github.com/fun-stack/mokos"
+}
