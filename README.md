@@ -5,18 +5,61 @@ Reactive http server
 
 ## Server
 
-### .server
+**.server**
+
+```javascript
+
+const server = mokos.server(function (request, response) {
+  response.send('hello');
+});
+
+```
 
 **.request**
 
 ```javascript
 
-var mokos = require('mokos');
+const mokos = require('mokos');
 
-var server = mokos.server();
+const server = mokos.server();
 
-server.request(function () {
-  this.send('hello world');
+server.request(function (requset, response) {
+  response.send('hello world');
+});
+
+```
+
+**.route**
+
+```javascript
+
+const request = mokos.server().request();
+
+request.route('/').onValue(function (request, response) {
+  response.send('index');
+});
+
+request.route('/profile').onValue(function () {
+  response.send('profile');
+});
+
+```
+
+**.use**
+
+```javascript
+
+const server = mokos.server();
+
+server.use(function (request, response) {
+  return new Promise(function (resolve, reject) {
+    resolve(response.set('locals', value), request);
+  });
+});
+
+
+server.request(function (request, response) {
+  response.send(res.locals.get('value'));
 });
 
 ```
