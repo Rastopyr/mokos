@@ -12,7 +12,7 @@ Register new route and return API route object.
 **Arguments**
 * routeName - { String }  Name of route
 
-#### .then(chain)
+### .then(chain)
 
 Register `chain` function as handler of route.
 
