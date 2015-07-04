@@ -3,8 +3,6 @@ Nested routes, for [PromisePipe](https://github.com/edjafarov/PromisePipe)
 
 # API
 
-## Route
-
 ### Route(routeName)
 
 Register new route and return API route object.
