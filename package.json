@@ -1,10 +1,10 @@
 {
   "name": "mokos",
-  "version": "0.0.2",
+  "version": "0.2.0",
   "description": "Functional reactive server. Based on Bacon.js",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha --require babel/register tests"
   },
   "repository": {
     "type": "git",
@@ -27,5 +27,12 @@
   "homepage": "https://github.com/fun-stack/mokos",
   "dependencies": {
     "baconjs": "^0.7.65"
+  },
+  "devDependencies": {
+    "babel": "^5.6.14",
+    "chai": "^3.0.0",
+    "mocha": "^2.2.5",
+    "nock": "^2.7.0",
+    "sinon": "^1.15.4"
   }
 }
