@@ -28,8 +28,16 @@ function RouteFabric (routePath) {
       return newRoute;
     }
 
-    Route.subroutes[subroute.path] = subroute;
-    return Route;
+    function addRecursiveSubroutes (subroutes) {
+      if (!subroutes.length) {  return Route; }
+
+      Route.subroutes[subroutes[0].path] = subroutes[0];
+      subroutes.shift();
+
+      return addRecursiveSubroutes(subroutes);
+    }
+
+    return addRecursiveSubroutes(Array.prototype.slice.call(arguments));
   };
 
   return Route;
