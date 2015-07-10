@@ -41,6 +41,12 @@ Add subroute for route.
 
 **Example**
 ```javascript
+let indexRoute = Route('/')
+  .then(getDataForIndexPage)
+
+indexRoute.sub('/users').then(getAllUsers).then(renderUserList)
+indexRoute.sub('/user').then(getUser).then(renderUser)
+
 Route('/')
   .then(getDataForIndexPage)
   .sub(

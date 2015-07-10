@@ -1,6 +1,6 @@
 {
   "name": "mokos",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Functional reactive server. Based on Bacon.js",
   "main": "src/index.js",
   "scripts": {
