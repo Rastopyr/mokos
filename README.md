@@ -8,14 +8,14 @@ Nested routes, for [PromisePipe](https://github.com/edjafarov/PromisePipe)
 
 ### Route(routeName)
 
-Register new route and return API route object.
+Create new route and return API of route.
 
 **Arguments**
 * routeName - { String }  Name of route
 
 ### .then(chain)
 
-Register `chain` function as handler of route.
+Add `chain` function as handler of route.
 
 **Arguments**
 * chain - { Function || Promise } Handler of route chain. Function or Promise
@@ -38,7 +38,7 @@ Route('/').then(getDataForIndexPage).then(renderIndexPage)
 Add subroute for route.
 
 **Arguments**
-* Route1 - { RouteObject } Result of route contructor. There may be any number
+* Route1 - { Route } Result of route contructor. Routes may be any number
 
 **Example**
 ```javascript
@@ -58,7 +58,7 @@ Route('/')
 
 ### .use(name, handler)
 
-Add `handler` to namespace of RouteObject on `name` property.
+Add `handler` to namespace of Route on `name` property.
 
 **Arguments**
 * name - { String } Name of function
@@ -74,3 +74,34 @@ Route('/')
     Route('/user').getUser().renderUser()
   )
 ```
+
+## Router()
+
+Create and return Router
+
+### .Route(routePath)
+
+Create new Route in Router scope.
+
+### .adapter(adapterHandler)
+
+Add adapter for this environment.
+
+**Arguments**
+* adapterHandler - { Function } Adapter for handling of change routing
+
+### .getRoute(path, isFull)
+
+Return route function by `path`.
+
+**Arguments**
+* path - { String } Path of route
+* isFull - { Boolean } Include handlers, that marked as 'initial'
+
+### .execRoute(path, isFull)
+
+Execute sequence of Route by `path`
+
+**Arguments**
+* path - { String } Path of route
+* isFull - { Boolean } Include handlers, that marked as 'initial'
